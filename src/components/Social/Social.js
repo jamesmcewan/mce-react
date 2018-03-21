@@ -57,10 +57,19 @@ const Icon = ({ link, title }) => (
   </Li>
 );
 
-const Social = ({ social }) => (
+const Social = ({ items }) => (
   <Footer>
-    <Ul>{social.map(i => <Icon {...i} key={i.title} />)}</Ul>
+    <Ul>{items.map(i => <Icon {...i} key={i.title} />)}</Ul>
   </Footer>
 );
+
+Social.defaultProps = {
+  items: [
+    {
+      "title": "",
+      "link": ""
+    },
+  ]
+};
 
 export default Social;

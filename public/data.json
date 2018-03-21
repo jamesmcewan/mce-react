@@ -1,0 +1,30 @@
+{
+  "title": {
+    "text": "Hey! I'm James McEwan, a Web Developer based in Edinburgh, Scotland",
+    "imgAlt": "James McEwan"
+  },
+  "social": {
+    "items": [
+      {
+        "title": "Github",
+        "link": "http://github.com/jamesmcewan"
+      },
+      {
+        "title": "Dribbble",
+        "link": "http://dribbble.com/mce"
+      },
+      {
+        "title": "Codepen",
+        "link": "http://codepen.com/mce"
+      },
+      {
+        "title": "Linkedin",
+        "link": "http://instagram.com/jamesmcewan"
+      },
+      {
+        "title": "mail",
+        "link": "mailto:james@mce.codes"
+      }
+    ]
+  }
+}

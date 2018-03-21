@@ -23,41 +23,42 @@ body {
 
 class App extends Component {
   state = {
-    title: {
-      text:
-        "Hey! I'm James McEwan, a Web Developer based in Edinburgh, Scotland",
-      imgAlt: "James McEwan"
-    },
-    social: [
-      {
-        title: "Github",
-        link: "http://github.com/jamesmcewan"
-      },
-      {
-        title: "Dribbble",
-        link: "http://dribbble.com/mce"
-      },
-      {
-        title: "Codepen",
-        link: "http://codepen.com/mce"
-      },
-      {
-        title: "Linkedin",
-        link: "http://instagram.com/jamesmcewan"
-      },
-      {
-        title: "mail",
-        link: "mailto:james@mce.codes"
-      }
-    ]
+    title: {},
+    social: {},
+    error: {
+      isVisible: false,
+      text: ""
+    }
   };
+
+  getData = () => {
+    console.log('gd');
+    return fetch("./../../data.json")
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          title: res.title,
+          social: res.social
+        })
+      )
+      .catch(err => 
+        console.log(err)
+        // this.setState({
+        //   error: { isVisible: true, text: "something went wrong" }
+        // })
+      );
+  };
+
+  componentWillMount() {
+    this.getData();
+  }
 
   render() {
     return (
       <div className="App">
         <Title {...this.state.title} img={jm} />
         <Content />
-        <Social {...this.state} />
+        <Social {...this.state.social} />
       </div>
     );
   }
