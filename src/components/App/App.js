@@ -47,15 +47,23 @@ class App extends Component {
       .catch(err =>
         this.setState({
           meta: messages.meta,
-          error: true, 
+          error: true,
           errorText: messages.errorText
         })
       );
   };
 
+  getInitialData = data => {
+    this.setState({
+      meta: data.meta,
+      title: data.title,
+      content: data.content,
+      social: data.social
+    });
+  };
+
   componentWillMount() {
     this.getData();
-    
   }
 
   render() {
@@ -71,12 +79,12 @@ class App extends Component {
             <Social {...this.state.social} />
           </Fragment>
         )}
-        {isThereAnError && 
-        <Fragment>
-          <Meta {...this.state.meta} />
-          <Error text={this.state.errorText} />
-        </Fragment>
-        }
+        {isThereAnError && (
+          <Fragment>
+            <Meta {...this.state.meta} />
+            <Error text={this.state.errorText} />
+          </Fragment>
+        )}
       </div>
     );
   }
