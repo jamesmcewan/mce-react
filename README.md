@@ -4,11 +4,10 @@ Redo of [https://mcewan.io](https://mcewan.io) with the most modern iteration of
 
 ## Intended features
 
-- [ ] React front end UI
+- [X] React front end UI
 - [ ] React server side rendering
-- [ ] PWA
-- [ ] Firebase back end
-- [ ] Jest unit testing
+- [X] PWA
+- [X] Jest unit testing
 - [ ] Continuous Integration provided by Travis-CI or Jenkins
 
 ## Future plans
@@ -27,26 +26,12 @@ Redo of [https://mcewan.io](https://mcewan.io) with the most modern iteration of
 - [X] NPM
 - [X] React 16.2.0
 
-### Type-checking
-
-- [ ] ~Prop-types~
-- [X] Flow
-- [ ] TypeScript
 
 ### Linting
 
-- [ ] Stylint
-- [ ] ESLint
-- [ ] HTMLHint
-- [ ] JSONLint
-- [ ] Alex
-- [ ] Write-good
-- [ ] IBM Styleguide
-- [ ] remark-lint
+- [ ] Styleint
+- [X] ESLint
 
 ### Styling
 
-- [ ] SCSS - wide support base
-- [ ] Stylus - better JavaScript support
-- [ ] CSS Modules
-- [ ] Styled Components
+- [X] Styled Components
