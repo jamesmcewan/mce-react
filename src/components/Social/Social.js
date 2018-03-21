@@ -7,6 +7,7 @@ const Footer = styled.footer`
   max-width: 832px;
   margin: auto;
   padding-top: 13px;
+
   @media screen and (min-width: 750px) {
     padding-top: 26px;
   }

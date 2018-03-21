@@ -8,6 +8,7 @@ const H1 = styled.h1`
   line-height: 1.5em;
   font-style: normal;
   font-weight: 700;
+
   @media screen and (min-width: 750px) {
     font-size: 32px;
   }
@@ -17,6 +18,7 @@ const Header = styled.header`
   width: 90%;
   max-width: 832px;
   margin: auto;
+
   @media screen and (min-width: 750px) {
     padding-top: 26px;
     display: flex;

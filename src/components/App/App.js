@@ -8,19 +8,18 @@ import Social from "../Social/Social";
 import messages from "../../helpers/messages";
 
 injectGlobal`
-html {
-  background: #151617 linear-gradient(#1a0f21, #151617 70%) no-repeat;
-}
+  html {
+    background: #151617 linear-gradient(#1a0f21, #151617 70%) no-repeat;
+  }
 
-body {
-  /* color: #eff6ff; */
-  color: #ccd3dc;
-  font-family: "Fira Sans", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.5em;
-}
+  body {
+    color: #ccd3dc;
+    font-family: "Fira Sans", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5em;
+  }
 `;
 
 class App extends Component {
