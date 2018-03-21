@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Icon from '../Icon/Icon';
+import SocialIcon from '../SocialIcon/SocialIcon';
 
 const Footer = styled.footer`
   width: 90%;
@@ -23,7 +23,7 @@ const Ul = styled.ul`
 
 const Social = ({ items }) => (
   <Footer>
-    <Ul>{items && items.map(i => <Icon {...i} key={i.title} />)}</Ul>
+    <Ul>{items && items.map(i => <SocialIcon {...i} key={i.title} />)}</Ul>
   </Footer>
 );
 
