@@ -1,6 +1,10 @@
 {
   "meta": {
-    "text": "James McEwan – Front-End Web Developer and Illustrator from Edinburgh, Scotland"
+    "text": "James McEwan – Front-End Web Developer and Illustrator from Edinburgh, Scotland",
+    "styles": [
+      "https://fonts.googleapis.com/css?family=Fira+Sans:300,700",
+      "fonts/ss-social-regular.css"
+    ]
   },
   "title": {
     "text": "Hey! I'm James McEwan, a Web Developer based in Edinburgh, Scotland",

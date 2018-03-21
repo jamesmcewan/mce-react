@@ -23,17 +23,8 @@ const Ul = styled.ul`
 
 const Social = ({ items }) => (
   <Footer>
-    <Ul>{items.map(i => <Icon {...i} key={i.title} />)}</Ul>
+    <Ul>{items && items.map(i => <Icon {...i} key={i.title} />)}</Ul>
   </Footer>
 );
-
-Social.defaultProps = {
-  items: [
-    {
-      title: "",
-      link: ""
-    }
-  ]
-};
 
 export default Social;
