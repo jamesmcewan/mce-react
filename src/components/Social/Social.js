@@ -1,17 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-const A = styled.a`
-  color: #c3ffde;
-  text-decoration: none;
-  transition: color 1.5s;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: #a168ff;
-  }
-`;
+import Icon from '../Icon/Icon';
 
 const Footer = styled.footer`
   width: 90%;
@@ -32,31 +21,6 @@ const Ul = styled.ul`
   flex-wrap: wrap;
 `;
 
-const Li = styled.li`
-  font-size: 52px;
-  margin: 26px 13px;
-  position: relative;
-`;
-
-const Hide = styled.span`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-`;
-
-const Icon = ({ link, title }) => (
-  <Li>
-    <A href={link} title={title} className={`ss-${title.toLowerCase()}`}>
-      <Hide>github</Hide>
-    </A>
-  </Li>
-);
-
 const Social = ({ items }) => (
   <Footer>
     <Ul>{items.map(i => <Icon {...i} key={i.title} />)}</Ul>
@@ -66,9 +30,9 @@ const Social = ({ items }) => (
 Social.defaultProps = {
   items: [
     {
-      "title": "",
-      "link": ""
-    },
+      title: "",
+      link: ""
+    }
   ]
 };
 

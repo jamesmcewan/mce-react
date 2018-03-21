@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { injectGlobal } from "styled-components";
+import Meta from "../Meta/Meta";
+import Error from "../Error/Error";
 import Title from "../Title/Title";
 import Content from "../Content/Content";
 import Social from "../Social/Social";
-import jm from "../../images/jm.jpg";
+import messages from "../../helpers/messages";
 
 injectGlobal`
 html {
@@ -23,42 +25,58 @@ body {
 
 class App extends Component {
   state = {
+    meta: {},
     title: {},
+    content: {},
     social: {},
-    error: {
-      isVisible: false,
-      text: ""
-    }
+    error: false,
+    errorText: ""
   };
 
   getData = () => {
-    console.log('gd');
     return fetch("./../../data.json")
       .then(res => res.json())
       .then(res =>
         this.setState({
+          meta: res.meta,
           title: res.title,
+          content: res.content,
           social: res.social
         })
       )
-      .catch(err => 
-        console.log(err)
-        // this.setState({
-        //   error: { isVisible: true, text: "something went wrong" }
-        // })
+      .catch(err =>
+        this.setState({
+          meta: messages.meta,
+          error: true, 
+          errorText: messages.errorText
+        })
       );
   };
 
   componentWillMount() {
     this.getData();
+    
   }
 
   render() {
+    const isThereAnError = this.state.error;
+
     return (
-      <div className="App">
-        <Title {...this.state.title} img={jm} />
-        <Content />
-        <Social {...this.state.social} />
+      <div>
+        {!isThereAnError && (
+          <Fragment>
+            <Meta {...this.state.meta} />
+            <Title {...this.state.title} />
+            <Content {...this.state.content} />
+            <Social {...this.state.social} />
+          </Fragment>
+        )}
+        {isThereAnError && 
+        <Fragment>
+          <Meta {...this.state.meta} />
+          <Error text={this.state.errorText} />
+        </Fragment>
+        }
       </div>
     );
   }
