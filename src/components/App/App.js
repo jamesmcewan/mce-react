@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { injectGlobal } from "styled-components";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Meta from "../Meta/Meta";
 import Error from "../Error/Error";
 import Title from "../Title/Title";
 import Content from "../Content/Content";
+import Email from "../Email/Email";
 import Social from "../Social/Social";
 import messages from "../../helpers/messages";
 
@@ -46,7 +48,7 @@ class App extends Component {
       .catch(err =>
         this.setState({
           meta: messages.meta,
-          error: true, 
+          error: true,
           errorText: messages.errorText
         })
       );
@@ -54,7 +56,6 @@ class App extends Component {
 
   componentWillMount() {
     this.getData();
-    
   }
 
   render() {
@@ -66,16 +67,23 @@ class App extends Component {
           <Fragment>
             <Meta {...this.state.meta} />
             <Title {...this.state.title} />
-            <Content {...this.state.content} />
+            <Router>
+              <Fragment>
+              <Link to="/">Home</Link>
+                <Link to="/email">Email</Link>
+                <Route exact path="/" render={() => <Content {...this.state.content} />} />
+                <Route path="/email" component={Email} />
+              </Fragment>
+            </Router>
             <Social {...this.state.social} />
           </Fragment>
         )}
-        {isThereAnError && 
-        <Fragment>
-          <Meta {...this.state.meta} />
-          <Error text={this.state.errorText} />
-        </Fragment>
-        }
+        {isThereAnError && (
+          <Fragment>
+            <Meta {...this.state.meta} />
+            <Error text={this.state.errorText} />
+          </Fragment>
+        )}
       </div>
     );
   }
