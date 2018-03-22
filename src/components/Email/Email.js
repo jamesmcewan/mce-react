@@ -75,8 +75,8 @@ class Email extends Component {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...this.state })
       })
-        .then(() => console("Success!"))
-        .catch(error => console(error));
+        .then(() => console.log("Success!"))
+        .catch(error => console.log(error));
   };
 
   handleChange = e => {
