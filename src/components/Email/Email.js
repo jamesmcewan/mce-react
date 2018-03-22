@@ -55,6 +55,12 @@ const Button = styled.button`
   box-sizing: border-box;
 `;
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class Email extends Component {
   state = {
     fullName: "",
@@ -64,6 +70,13 @@ class Email extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state })
+      })
+        .then(() => console("Success!"))
+        .catch(error => console(error));
   };
 
   handleChange = e => {
