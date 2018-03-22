@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 const Meta = ({text, styles}) => (
   <Helmet>
     <title>{text}</title>
-    {styles && styles.map(style => <link key={style} rel="stylesheet" href={style} />)}
+    {Array.isArray(styles) && styles.map((style, key) => <link key={`link-${key}`} rel="stylesheet" href={style} />)}
   </Helmet>
 );
 

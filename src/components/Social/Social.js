@@ -24,7 +24,7 @@ const Ul = styled.ul`
 
 const Social = ({ items }) => (
   <Footer>
-    <Ul>{items && items.map(i => <SocialIcon {...i} key={i.title} />)}</Ul>
+    <Ul>{Array.isArray(items) && items.map((i, key) => <SocialIcon {...i} key={`social-${key}`} />)}</Ul>
   </Footer>
 );
 
