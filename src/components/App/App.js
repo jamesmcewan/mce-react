@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { injectGlobal } from "styled-components";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Meta from "../Meta/Meta";
+import Nav from "../Nav/Nav";
 import Error from "../Error/Error";
 import Title from "../Title/Title";
 import Content from "../Content/Content";
@@ -69,8 +70,7 @@ class App extends Component {
             <Title {...this.state.title} />
             <Router>
               <Fragment>
-              <Link to="/">Home</Link>
-                <Link to="/email">Email</Link>
+                <Nav />
                 <Route exact path="/" render={() => <Content {...this.state.content} />} />
                 <Route path="/email" component={Email} />
               </Fragment>
