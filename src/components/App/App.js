@@ -35,28 +35,9 @@ class App extends Component {
     errorText: ""
   };
 
-  getData = () => {
-    return fetch("./../../data.json")
-      .then(res => res.json())
-      .then(res =>
-        this.setState({
-          meta: res.meta,
-          title: res.title,
-          content: res.content,
-          social: res.social
-        })
-      )
-      .catch(err =>
-        this.setState({
-          meta: messages.meta,
-          error: true,
-          errorText: messages.errorText
-        })
-      );
-  };
-
   componentDidMount() {
-    this.getData();
+    const init = {...this.props};
+    this.setState({ ...init });
   }
 
   render() {
