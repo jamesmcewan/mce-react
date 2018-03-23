@@ -2,6 +2,11 @@
 
 Redo of [https://mcewan.io](https://mcewan.io) with the most modern iteration of react.
 
+## Main branches
+
+- master [![Build Status](https://travis-ci.org/jamesmcewan/mce-react.svg?branch=master)](https://travis-ci.org/jamesmcewan/mce-react)
+- develop [![Build Status](https://travis-ci.org/jamesmcewan/mce-react.svg?branch=develop)](https://travis-ci.org/jamesmcewan/mce-react)
+
 ## Intended features
 
 - [X] React front end UI
