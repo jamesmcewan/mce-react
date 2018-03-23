@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "lint:js": "eslint src/**/*.js",
     "lint:css": "stylelint src/**/**.js",
