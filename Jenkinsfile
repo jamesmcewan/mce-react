@@ -8,17 +8,17 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'Yarn install'
+        sh 'yarn install'
       }
     }
     stage('Test') {
       steps {
-        sh 'Yarn test'
+        sh 'yarn test'
       }
     }
     stage('Build') {
       steps {
-        sh 'Yarn build'
+        sh 'yarn build'
       }
     }
   }
