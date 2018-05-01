@@ -5,6 +5,13 @@ pipeline:
       - yarn install
       - yarn test
       - yarn build
+  gcr:
+    image: plugins/gcr
+    registry: eu.gcr.io
+    repo: mcewan-io/mce-react
+    tags: latest
+    secrets:
+      - gcr_json_key
   slack:
     image: plugins/slack
     webhook: slack_webhook
