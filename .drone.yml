@@ -1,7 +1,4 @@
 pipeline:
-  branches:
-    - master
-    - develop
   build:
     image: 'node:9.11.1-alpine'
     commands:
