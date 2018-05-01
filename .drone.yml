@@ -5,3 +5,13 @@ pipeline:
       - yarn install
       - yarn test
       - yarn build
+  slack:
+    image: plugins/slack
+    webhook: slack_hook
+    channel: slack_channel
+    username: slack_user
+    icon_url: slack_icon
+    when:
+      status:
+        - success
+        - failure
