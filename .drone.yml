@@ -8,15 +8,9 @@ pipeline:
   slack:
     image: plugins/slack
     webhook: slack_webhook
-    channel: slack_channel
-    username: slack_user
-    icon_url: slack_icon
     when:
       status:
         - success
         - failure
     secrets:
       - slack_webhook
-      - slack_channel
-      - slack_user
-      - slack_icon
