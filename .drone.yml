@@ -11,6 +11,9 @@ pipeline:
     username: docker_username
     password: docker_password
     autotag: true
+    secrets:
+      - docker_username
+      - docker_password
   slack:
     image: plugins/slack
     webhook: slack_webhook
@@ -19,6 +22,4 @@ pipeline:
         - success
         - failure
     secrets:
-      - docker_username
-      - docker_password
       - slack_webhook
