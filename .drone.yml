@@ -23,3 +23,6 @@ pipeline:
       status:
         - success
         - failure
+  branches:
+    - master
+    - develop
