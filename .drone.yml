@@ -7,7 +7,7 @@ pipeline:
       - yarn build
   slack:
     image: plugins/slack
-    webhook: slack_hook
+    webhook: slack_webhook
     channel: slack_channel
     username: slack_user
     icon_url: slack_icon
