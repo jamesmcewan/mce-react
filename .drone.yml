@@ -1,4 +1,7 @@
 pipeline:
+  branches:
+    - master
+    - develop
   build:
     image: 'node:9.11.1-alpine'
     commands:
@@ -12,6 +15,8 @@ pipeline:
     tags: latest
     secrets:
       - gcr_json_key
+    when:
+      branch: master
   slack:
     image: plugins/slack
     webhook: slack_webhook
