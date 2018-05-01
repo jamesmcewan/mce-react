@@ -5,6 +5,12 @@ pipeline:
       - yarn install
       - yarn test
       - yarn build
+  docker:
+    image: plugins/docker
+    repo: jamesvmcewan/mce-react
+    username: docker_username
+    password: docker_password
+    autotag: true
   slack:
     image: plugins/slack
     webhook: slack_webhook
@@ -13,4 +19,6 @@ pipeline:
         - success
         - failure
     secrets:
+      - docker_username
+      - docker_password
       - slack_webhook
