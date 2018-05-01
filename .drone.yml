@@ -5,6 +5,10 @@ pipeline:
       - yarn install
       - yarn test
       - yarn build
+    when:
+      branch:
+        - master
+        - develop
   gcr:
     image: plugins/gcr
     registry: eu.gcr.io
@@ -20,9 +24,9 @@ pipeline:
     secrets:
       - slack_webhook
     when:
+      branch:
+        - master
+        - develop
       status:
         - success
         - failure
-  branches:
-    - master
-    - develop
