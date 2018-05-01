@@ -1,7 +1,28 @@
 pipeline:
+  branches:
+    - master
+    - develop
   build:
     image: 'node:9.11.1-alpine'
     commands:
       - yarn install
       - yarn test
       - yarn build
+  gcr:
+    image: plugins/gcr
+    registry: eu.gcr.io
+    repo: mcewan-io/mce-react
+    tags: latest
+    secrets:
+      - gcr_json_key
+    when:
+      branch: master
+  slack:
+    image: plugins/slack
+    webhook: slack_webhook
+    when:
+      status:
+        - success
+        - failure
+    secrets:
+      - slack_webhook
