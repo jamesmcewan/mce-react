@@ -15,3 +15,8 @@ pipeline:
       status:
         - success
         - failure
+    secrets:
+      - slack_webhook
+      - slack_channel
+      - slack_user
+      - slack_icon
